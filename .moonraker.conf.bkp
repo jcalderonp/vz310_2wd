@@ -28,7 +28,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	mainsail
+	octoeverywhere
 
 [update_manager]
 refresh_interval = 168
@@ -69,6 +69,24 @@ path = ~/klippain_shaketune
 virtualenv = ~/klippy-env
 requirements = requirements.txt
 system_dependencies = system-dependencies.json
+primary_branch = main
+managed_services = klipper
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/pi/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/pi/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[update_manager chopper-resonance-tuner]
+type = git_repo
+path = /home/pi/chopper-resonance-tuner
+origin = https://github.com/MRX8024/chopper-resonance-tuner.git
 primary_branch = main
 managed_services = klipper
 
